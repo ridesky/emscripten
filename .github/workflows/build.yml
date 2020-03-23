@@ -1,3 +1,13 @@
+name: CI
+
+on:
+  create:
+    tags:
+  push:
+    branches:
+      - master
+  pull_request:
+
 steps:
 - uses: actions/checkout@v1
 - name: make dist
