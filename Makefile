@@ -6,6 +6,9 @@ EXCLUDE_PATTERN=--exclude='*.pyc' --exclude='*/__pycache__'
 
 dist: $(DISTFILE)
 
+# Create an distributable archive of emscripten suitable for use
+# by end users.  This archive excludes parts of the codebase that
+# are you only used by emscripten developers.
 $(DISTFILE):
 	@rm -rf $(DISTDIR)
 	mkdir $(DISTDIR)
