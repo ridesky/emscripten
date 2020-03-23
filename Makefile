@@ -13,7 +13,7 @@ $(DISTFILE):
 	@rm -rf $(DISTDIR)
 	mkdir $(DISTDIR)
 	cp -ar * $(DISTDIR)
-	for ext in $(EXCLUDES); do rm -rf $(DISTDIR)/$$ext; done
+	for exclude in $(EXCLUDES); do rm -rf $(DISTDIR)/$$exclude; done
 	tar cf $@ $(EXCLUDE_PATTERN) -C `dirname $(DISTDIR)` `basename $(DISTDIR)`
 
 .PHONY: dist
