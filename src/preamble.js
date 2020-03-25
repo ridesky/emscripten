@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright 2020 Emscripten authors
+ * SPDX-License-Identifier: MIT
+ */
+
 // === Preamble library stuff ===
 
 // Documentation for the public APIs defined in this file must be updated in:

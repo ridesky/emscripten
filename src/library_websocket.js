@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright 2020 Emscripten authors
+ * SPDX-License-Identifier: MIT
+ */
+
 var LibraryWebSocket = {
   $WS: {
     sockets: [null],

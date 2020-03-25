@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright 2020 Emscripten authors
+ * SPDX-License-Identifier: MIT
+ */
+
 var asmFS = {
   $FS: {
     populate: function(path, mode) {

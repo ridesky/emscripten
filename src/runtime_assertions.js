@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright 2020 Emscripten authors
+ * SPDX-License-Identifier: MIT
+ */
+
 #if ASSERTIONS
 // Endianness check (note: assumes compiler arch was little-endian)
 (function() {

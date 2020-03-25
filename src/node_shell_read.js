@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright 2020 Emscripten authors
+ * SPDX-License-Identifier: MIT
+ */
+
   read_ = function shell_read(filename, binary) {
 #if SUPPORT_BASE64_EMBEDDING
     var ret = tryParseAsDataURI(filename);
