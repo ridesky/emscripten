@@ -1141,6 +1141,9 @@ FS.staticInit();` +
       return stream.position;
     },
     read: function(stream, buffer, offset, length, position) {
+#if CAN_ADDRESS_2GB
+      offset >>>= 0;
+#endif
       if (length < 0 || position < 0) {
         throw new FS.ErrnoError({{{ cDefine('EINVAL') }}});
       }
@@ -1167,6 +1170,9 @@ FS.staticInit();` +
       return bytesRead;
     },
     write: function(stream, buffer, offset, length, position, canOwn) {
+#if CAN_ADDRESS_2GB
+      offset >>>= 0;
+#endif
       if (length < 0 || position < 0) {
         throw new FS.ErrnoError({{{ cDefine('EINVAL') }}});
       }
@@ -1220,6 +1226,9 @@ FS.staticInit();` +
       stream.stream_ops.allocate(stream, offset, length);
     },
     mmap: function(stream, buffer, offset, length, position, prot, flags) {
+#if CAN_ADDRESS_2GB
+      offset >>>= 0;
+#endif
       // User requests writing to file (prot & PROT_WRITE != 0).
       // Checking if we have permissions to write to the file unless
       // MAP_PRIVATE flag is set. According to POSIX spec it is possible
@@ -1240,6 +1249,9 @@ FS.staticInit();` +
       return stream.stream_ops.mmap(stream, buffer, offset, length, position, prot, flags);
     },
     msync: function(stream, buffer, offset, length, mmapFlags) {
+#if CAN_ADDRESS_2GB
+      offset >>>= 0;
+#endif
       if (!stream || !stream.stream_ops.msync) {
         return 0;
       }
