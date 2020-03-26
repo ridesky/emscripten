@@ -1084,14 +1084,6 @@ function reattachComments(ast, comments) {
   // Walk through all comments in ascending line number, and match each
   // comment to the appropriate code block.
   for(var i = 0, j = 0; i < comments.length; ++i) {
-    // Emscripten has an explicit option to emit license comments,
-    // EMIT_EMSCRIPTEN_LICENSE. That will be handled for us, so we can strip
-    // license comments here (if we don't closure will preserve them without
-    // a way to disable that, which means we could end up with extra or
-    // unnecessary comments).
-    if (comments[i].value.indexOf('@license') >= 0) {
-      continue;
-    }
     while(j < symbols.length && symbols[j].start.pos < comments[i].end) {
       ++j;
     }
